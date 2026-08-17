@@ -24,6 +24,10 @@ int main() {
 	std::cout << "Reverse of 1234 is: " << r_algo::intAlgo::reverseNumber(1234)
 		<< std::endl;
 
+	std::cout << "GCD of 12 and 18 is: " << r_algo::intAlgo::gcd(12, 18) << std::endl;
+
+	std::cout << "GCD of 5 and 4 is:" << r_algo::intAlgo::gcd(5, 4) << std::endl;
+
 	return 0;
 }
 

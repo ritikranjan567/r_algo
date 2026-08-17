@@ -14,3 +14,19 @@ TEST(IsPalindromeTest, ReturnsIfNumberPalindrome) {
     EXPECT_FALSE(r_algo::intAlgo::isPalindrome(1212));
     EXPECT_TRUE(r_algo::intAlgo::isPalindrome(121));
 }
+
+TEST(GcdTest, GcdOfTwoDiffNumWithGcd) {
+    EXPECT_EQ(r_algo::intAlgo::gcd(12, 18), 6);
+}
+
+TEST(GcdTest, GcdOfTwoDiffNumberWithGcdOne) {
+    EXPECT_EQ(r_algo::intAlgo::gcd(5, 4), 1);
+}
+
+TEST(IsPrimeTest, Check3IsPrime) {
+    EXPECT_TRUE(r_algo::intAlgo::isPrime(3));
+}
+
+TEST(IsPrimeTest, Check6IsPrime) {
+    EXPECT_FALSE(r_algo::intAlgo::isPrime(6));
+}

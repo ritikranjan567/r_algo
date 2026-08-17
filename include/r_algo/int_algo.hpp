@@ -1,4 +1,5 @@
 #pragma once
+#include <cmath>
 
 namespace r_algo {
     /// @brief this namespace for int related algos
@@ -33,6 +34,38 @@ namespace r_algo {
         /// @return return true if palindrome else false
         constexpr bool isPalindrome(int number) {
             return r_algo::intAlgo::reverseNumber(number) == number;
+        }
+
+        /// @brief Finds the gcd of two numbers
+        /// @param a
+        /// @param b
+        /// @return GCD/HCF of two numbers
+        constexpr int gcd(int a, int b) {
+            int big = std::max(a, b), small = std::min(a, b);
+
+            while (small != 0) {
+                int r = big % small;
+                big = small;
+                small = r;
+            }
+
+            return big;
+        }
+
+        /// <summary>
+        /// Check if the number is prime
+        /// </summary>
+        /// <param name="number">Number to check for</param>
+        /// <returns>true if numebr is prime else false</returns>
+        constexpr bool isPrime(unsigned int number) {
+            if (number <= 1) return false;
+
+            unsigned int root = sqrt(number);
+            for (unsigned int i = 2; i <= root; i++) {
+                if (number % i == 0) return false;
+            }
+
+            return true;
         }
     }
 }
