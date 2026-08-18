@@ -30,3 +30,11 @@ TEST(IsPrimeTest, Check3IsPrime) {
 TEST(IsPrimeTest, Check6IsPrime) {
     EXPECT_FALSE(r_algo::intAlgo::isPrime(6));
 }
+
+TEST(SumFirstNnumberTest, CheckSumOfFirstNNumber) {
+	EXPECT_EQ(r_algo::intAlgo::sumFirstNnumbers(5), 15);
+}
+
+TEST(SumFirstNnumberTest, CheckSumOfFirstNNumberWithZero) {
+	EXPECT_EQ(r_algo::intAlgo::sumFirstNnumbers(0), 0);
+}

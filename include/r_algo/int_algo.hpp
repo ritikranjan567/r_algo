@@ -67,5 +67,14 @@ namespace r_algo {
 
             return true;
         }
+
+        /// <summary>
+        /// Returns the first n numbers
+        /// </summary>
+        /// <param name="number"></param>
+        /// <returns>sum upto number</returns>
+        constexpr int sumFirstNnumbers(int number) {
+            return (number * (number + 1)) / 2;
+        }
     }
 }
