@@ -123,3 +123,17 @@ TEST(UtilIsSorted, WorksForStringVector) {
 	std::vector<std::string> vec = {"apple", "banana", "cherry", "date"};
 	EXPECT_TRUE(r_algo::util::isSorted(vec.begin(), vec.end()));
 }
+
+TEST(UtilRotateTest, RotateLeft) {
+    std::vector<int> vec = {1, 2, 3, 4, 5};
+    r_algo::util::rotate(vec.begin(), vec.end(), 1, r_algo::ROTATE_LEFT);
+    std::vector<int> expected = {2, 3, 4, 5, 1};
+    EXPECT_EQ(vec, expected);
+}
+
+TEST(UtilRotateTest, RotateRight) {
+    std::vector<int> vec = {1, 2, 3, 4, 5};
+    r_algo::util::rotate(vec.begin(), vec.end(), 1, r_algo::ROTATE_RIGHT);
+    std::vector<int> expected = {5, 1, 2, 3, 4};
+    EXPECT_EQ(vec, expected);
+}

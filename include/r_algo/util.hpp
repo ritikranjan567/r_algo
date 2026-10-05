@@ -3,7 +3,17 @@
 #include <utility>
 #include <iterator>
 
+enum RotateDirection {
+    ROTATE_LEFT = 1,
+    ROTATE_RIGHT = 2
+};
+
+
 namespace r_algo {
+	enum RotateDirection {
+		ROTATE_LEFT = 1,
+		ROTATE_RIGHT = 2
+	};
 	namespace util {
 
 		/// @brief Swaps two elements
@@ -51,6 +61,28 @@ namespace r_algo {
 
 			return true;
 
+		}
+
+		/// @brief Function used to rotate array
+		/// @tparam iter Must satify BidirectionalIterator requirements and support ++ and -- 
+		/// @param start 'start of the array'
+		/// @param end 'end of the array'
+		/// @param k 'number of units to rotate'
+		/// @param rotateDirection 'Direction ROTATE_LEFT or ROTATE_RIGHT'; default ROTATE_RIGHT
+		template <typename iter>
+		constexpr void rotate(iter start, iter end, unsigned int k, RotateDirection direction = ROTATE_RIGHT) {
+			reverse(start, end);
+
+			switch (direction)
+			{
+			case ROTATE_RIGHT:
+				reverse((start + k), end);
+				break;
+			
+			default:
+				reverse(start, (end - k));
+				break;
+			}
 		}
 	}
 }

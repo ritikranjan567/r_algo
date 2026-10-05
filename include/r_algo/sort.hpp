@@ -55,7 +55,7 @@ namespace r_algo {
 		Iter mid = begin + (end - begin) / 2;
 
 		mergeSort(begin, mid);
-		mergeSort(mid + 1, end);
+		mergeSort(mid, end);
 		merge(begin, mid, end);
 	}
 }
